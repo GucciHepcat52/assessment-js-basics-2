@@ -102,15 +102,15 @@ const foodArray = [
     category: "cheese",
     popularity: 2,
     rating: 3,
-    tags: "fatening"
+    tags: ["fatening"]
   },
   {
-    name: "Dallin",
+    name: "Kyle",
     price: 3,
     category: "cheese",
     popularity: 2,
     rating: 3,
-    tags: "large"
+    tags: ["large"]
   },
   {
     name: "Maddy",
@@ -118,7 +118,7 @@ const foodArray = [
     category: "pepperoni",
     popularity: 3,
     rating: 2,
-    tags: "kids"
+    tags: ["kids"]
   },
   {
     name: "Haley",
@@ -126,7 +126,7 @@ const foodArray = [
     category: "sausage",
     popularity: 4,
     rating: 1,
-    tags: "adults"
+    tags: ["adults"]
   },
   {
     name: "Bill",
@@ -134,8 +134,8 @@ const foodArray = [
     category: "veggie",
     popularity: 5,
     rating: 4,
-    tags: "fun"
-  }
+    tags: ["fun"]
+  },
 ];
 
 //////////////////PROBLEM 4////////////////////
@@ -195,9 +195,15 @@ console.log(filteredFood);
 
 //CODE HERE
 const filterByProperty = (property, number, type) => {
-    let filteredArray = foodArray.filter((element) => element.popularity === +property && element.rating === number && element.rating > type );
-    return filteredArray;
-}
+  let filteredArray = foodArray.filter((meal) => {
+    if (type === "above") {
+      return meal[property] > number;
+    } else if (type === "below") {
+      return meal[property] < number;
+    }
+  });
+  return filteredArray;
+};
 
 /*
     Invoke the `filterByProperty` function passing
@@ -207,4 +213,4 @@ const filterByProperty = (property, number, type) => {
 */
 
 //CODE HERE
-console.log(filterByProperty("3", 2, 1));
+console.log(filterByProperty("popularity", 2, "above"));
