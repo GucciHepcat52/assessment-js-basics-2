@@ -42,7 +42,7 @@ class Employee {
 */
 
 //CODE HERE
-const empOne = new Employee("Jess", ["weekday mornings, weekday afternoons"]);
+const empOne = new Employee("Jess", ["weekday mornings", "weekday afternoons"]);
 console.log(empOne);
 
 /*
@@ -120,7 +120,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-const manager = new Manager("Winston", ["weekday mornings, weekday afternoons"], ["Cece", "Schmidt"]);
+const manager = new Manager("Winston", ["weekday mornings", "weekday afternoons"], ["Cece", "Schmidt"]);
 
 /*
     Call the `getEmployees` method on the
