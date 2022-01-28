@@ -195,7 +195,7 @@ console.log(filteredFood);
 
 //CODE HERE
 const filterByProperty = (property, number, type) => {
-    let filteredArray = foodArray.filter((element) => element.popularity === property && element.rating === number && element.rating > type );
+    let filteredArray = foodArray.filter((element) => element.popularity === +property && element.rating === number && element.rating > type );
     return filteredArray;
 }
 
@@ -207,4 +207,4 @@ const filterByProperty = (property, number, type) => {
 */
 
 //CODE HERE
-console.log(filterByProperty("2", 3, 5));
+console.log(filterByProperty("3", 2, 1));
